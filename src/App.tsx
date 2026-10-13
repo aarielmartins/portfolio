@@ -1,10 +1,11 @@
+import Layout from './components/Layout'
 import { GlobalCSS } from './styles'
 
 function App() {
   return (
     <>
       <GlobalCSS />
-      <div>ola mundo</div>
+      <Layout />
     </>
   )
 }

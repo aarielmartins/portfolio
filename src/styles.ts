@@ -5,7 +5,7 @@ export const cores = {
   cinzaClaro: '#f7f6f6',
   cinza: '#c5c3c3',
   chumbo: '#848484',
-  preto: '#0b0b0b',
+  preto: '#000000',
   detalhe: '#24c205',
   detalheClaro: '#aaeb8b'
 }
@@ -17,11 +17,17 @@ export const texto = {
   titulo: '36px'
 }
 
+export const breakpoints = {
+  tablet: '1100px',
+  mobile: '760px'
+}
+
 export const GlobalCSS = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
     font-family: "Clarity City", sans-serif;
   }
 
