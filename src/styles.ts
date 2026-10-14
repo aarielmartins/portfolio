@@ -3,18 +3,18 @@ import { createGlobalStyle } from 'styled-components'
 export const cores = {
   branco: '#ffffff',
   cinzaClaro: '#f7f6f6',
-  cinza: '#c5c3c3',
-  chumbo: '#848484',
+  cinza: '#888888',
+  chumbo: '#1f1f1f',
   preto: '#000000',
-  detalhe: '#24c205',
+  detalhe: '#5ac205',
   detalheClaro: '#aaeb8b'
 }
 
 export const texto = {
-  detalhe: '12px',
-  subtitulo: '16px',
+  detalhe: '16px',
+  subtitulo: '20px',
   chamada: '18px',
-  titulo: '36px'
+  titulo: '28px'
 }
 
 export const breakpoints = {
