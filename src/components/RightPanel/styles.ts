@@ -1,35 +1,34 @@
 import styled from 'styled-components'
 
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, cores, texto } from '../../styles'
 
 export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 28px;
   height: 100%;
-  padding: 28px 24px;
-  overflow-y: auto;
-  scrollbar-width: none;
+  padding: 38px 30px;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  /* @media (max-width: ${breakpoints.tablet}) {
     display: none;
-  }
+  } */
 `
 
 export const Block = styled.section`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid ${cores.detalheClaro};
+  padding-bottom: 30px;
+  border-bottom: 1px solid ${cores.chumbo};
 
   h3 {
-    font-size: 13px;
     font-weight: 600;
+    font-size: ${texto.chamada};
   }
 
   p {
     color: ${cores.cinza};
+    font-size: ${texto.chamada};
 
     strong {
       color: ${cores.branco};
@@ -43,9 +42,12 @@ export const TextLink = styled.button`
   align-items: center;
   gap: 6px;
   align-self: flex-start;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: ${texto.chamada};
+  font-weight: 600;
   color: ${cores.detalhe};
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
@@ -61,8 +63,20 @@ export const StackGrid = styled.ul`
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: ${texto.chamada};
+    font-weight: 600;
+
+    & span {
+      padding: 6px;
+      border: 1px solid ${cores.chumbo};
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+    }
+
+    & svg {
+      color: ${cores.detalhe};
+    }
   }
 `
 

@@ -7,7 +7,7 @@ export const Aside = styled.aside`
   flex-direction: column;
   gap: 32px;
   height: 100%;
-  padding: 38px 24px;
+  padding: 38px 30px;
 
   /* @media (max-width: ${breakpoints.mobile}) {
     position: fixed;

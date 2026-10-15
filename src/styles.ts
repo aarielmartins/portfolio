@@ -13,7 +13,7 @@ export const cores = {
 export const texto = {
   detalhe: '16px',
   subtitulo: '20px',
-  chamada: '18px',
+  chamada: '13px',
   titulo: '28px'
 }
 
