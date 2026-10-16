@@ -4,7 +4,7 @@ import { breakpoints, cores } from '../../styles'
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr) 300px;
+  grid-template-columns: 350px minmax(0, 1fr) 350px;
   height: 100vh;
   height: 100dvh;
   max-width: 1500px;

@@ -101,22 +101,20 @@ export const Radar = styled.ul`
   small {
     font-size: 11px;
   }
-`
 
-export const Cta = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  p {
+    padding-top: 4px;
+    color: ${cores.branco};
+    font-size: ${texto.chamada};
+  }
 
-  h3 {
-    font-size: 19px;
-    font-weight: 500;
-    line-height: 1.3;
+  h1 {
+    font-size: ${texto.chamada};
+    font-weight: 600;
   }
 `
 
 export const Foot = styled.footer`
-  font-size: 11px;
-  line-height: 1.7;
+  font-size: ${texto.chamada};
   color: ${cores.cinza};
 `

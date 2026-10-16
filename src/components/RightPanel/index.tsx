@@ -27,6 +27,8 @@ import { VscJson } from 'react-icons/vsc'
 import { IoIosGitBranch, IoIosCloudOutline } from 'react-icons/io'
 import { FiGithub } from 'react-icons/fi'
 import { RiNpmjsLine } from 'react-icons/ri'
+import { FaCheck } from 'react-icons/fa6'
+import { PiFileSqlBold } from 'react-icons/pi'
 
 // import { radar, stack } from '../../data'
 // import { scrollToSection } from '../../utils'
@@ -96,6 +98,12 @@ const RightPanel = () => (
           </span>
           CSS
         </li>
+        <li>
+          <span>
+            <FaCheck size={16} />
+          </span>
+          React Testing Library
+        </li>
       </S.StackGrid>
       <p>BACK END E DADOS</p>
       <S.StackGrid>
@@ -122,6 +130,12 @@ const RightPanel = () => (
             <TbBrandDjango size={16} />
           </span>
           Django
+        </li>
+        <li>
+          <span>
+            <PiFileSqlBold size={16} />
+          </span>
+          SQL
         </li>
       </S.StackGrid>
       <p>FERRAMENTAS E DEPLOY</p>
@@ -168,18 +182,6 @@ const RightPanel = () => (
           </span>
           Node.js
         </li>
-        <li>
-          <span>
-            <SiRender size={16} />
-          </span>
-          Render
-        </li>
-        <li>
-          <span>
-            <SiRender size={16} />
-          </span>
-          Render
-        </li>
       </S.StackGrid>
     </S.Block>
 
@@ -188,17 +190,19 @@ const RightPanel = () => (
       <S.Radar>
         <li>
           <div>
-            <h1>Games & experiências</h1>
+            <h1>GAMES & EXPERIÊNCIAS</h1>
             <p>
               Estudos de C# & Unity para agregar meus conhecimentos de 3D à
               programação
             </p>
           </div>
+        </li>
+        <li>
           <div>
-            <h1>Back end & banco de dados</h1>
+            <h1>FUNDAMENTOS DE PROGRAMAÇÃO</h1>
             <p>
-              Estudos de C# & Unity para agregar meus conhecimentos de 3D à
-              programação
+              Me aprofundando no estudos de algoritmos, estruturas de dados e
+              system design para fortalecer minha base técnica.
             </p>
           </div>
         </li>
@@ -207,7 +211,7 @@ const RightPanel = () => (
 
     <S.Foot>
       <p>Feito com React & muita curiosidade.</p>
-      <p>Do Brasil para a web</p>
+      <p>Do Brasil para a web.</p>
     </S.Foot>
   </S.Aside>
 )
