@@ -10,26 +10,26 @@ export const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  /* @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 240px minmax(0, 1fr);
   }
 
   @media (max-width: ${breakpoints.mobile}) {
     grid-template-columns: 1fr;
-  }
+  } */
 `
 
 export const Feed = styled.main`
   height: 100%;
   overflow-y: auto;
-  border-left: 1px solid ${cores.cinza};
-  border-right: 1px solid ${cores.cinza};
+  border-left: 1px solid ${cores.chumbo};
+  border-right: 1px solid ${cores.chumbo};
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
   scrollbar-width: thin;
-  scrollbar-color: ${cores.cinza} transparent;
+  scrollbar-color: ${cores.chumbo} transparent;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  /* @media (max-width: ${breakpoints.tablet}) {
     border-right: 0;
   }
 
@@ -40,5 +40,5 @@ export const Feed = styled.main`
 
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
-  }
+  } */
 `

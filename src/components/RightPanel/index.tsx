@@ -1,12 +1,4 @@
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Box,
-  Code2,
-  Gamepad2,
-  Icon
-} from 'lucide-react'
-
+import { ArrowDown, Box, Code2, Gamepad2 } from 'lucide-react'
 import { FaNodeJs, FaReact } from 'react-icons/fa'
 import {
   TbApi,
