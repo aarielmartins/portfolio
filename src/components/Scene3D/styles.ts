@@ -2,11 +2,14 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   height: 240px;
-  background: radial-gradient(120% 100% at 70% 0%, #1b2208 0%, #070707 60%);
+  background-color: #0a0a0a;
+  cursor: grab;
 
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
+  &:active {
+    cursor: grabbing;
+  }
+
+  canvas {
+    touch-action: pan-y;
   }
 `
