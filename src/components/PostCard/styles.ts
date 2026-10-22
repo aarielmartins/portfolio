@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, cores, texto } from '../../styles'
 
 export const Post = styled.article`
   display: flex;
@@ -9,9 +9,9 @@ export const Post = styled.article`
   padding: 24px 28px;
   border-bottom: 1px solid ${cores.chumbo};
 
-  @media (max-width: ${breakpoints.mobile}) {
+  /* @media (max-width: ${breakpoints.mobile}) {
     padding-inline: 18px;
-  }
+  } */
 `
 
 export const Header = styled.header`
@@ -29,10 +29,10 @@ export const Avatar = styled.div`
   overflow: hidden;
   border-radius: 50%;
   background-color: ${cores.detalhe};
-  color: #0a0a0a;
+  color: ${cores.preto};
   font-size: 14px;
   font-weight: 700;
-  text-transform: lowercase;
+  text-transform: uppercase;
 
   img {
     width: 100%;
@@ -44,13 +44,12 @@ export const Avatar = styled.div`
 export const Who = styled.div`
   flex: 1;
   min-width: 0;
-  line-height: 1.35;
 
   strong {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 14px;
+    font-size: ${texto.detalhe};
     color: ${cores.branco};
 
     svg {
@@ -59,30 +58,25 @@ export const Who = styled.div`
   }
 
   small {
-    font-size: 12px;
+    font-size: ${texto.chamada};
     color: ${cores.cinza};
   }
 `
 
 export const Category = styled.span`
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 10px;
-  letter-spacing: 0.06em;
+  align-self: flex-start;
+  font-size: ${texto.pequena};
   text-transform: uppercase;
   color: ${cores.cinza};
 `
 
 export const Title = styled.h2`
-  font-size: 24px;
+  font-size: ${texto.subtitulo};
   font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
   color: ${cores.branco};
 `
 
 export const Description = styled.p`
-  font-size: 15px;
-  line-height: 1.6;
   color: ${cores.cinza};
 `
 
@@ -102,13 +96,15 @@ export const Tags = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
   li {
     padding: 6px 12px;
     border-radius: 6px;
     background-color: ${cores.chumbo};
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 11px;
+    font-size: ${texto.pequena};
     color: ${cores.cinza};
   }
 `
@@ -131,8 +127,9 @@ const iconBase = css`
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  background-color: transparent;
+  border: none;
   color: ${cores.cinza};
-  font-size: 13px;
   cursor: pointer;
   transition: color 0.15s;
 
@@ -171,12 +168,12 @@ export const ProjectLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
   font-weight: 600;
   color: ${cores.branco};
   text-decoration: none;
 
   &:hover {
     color: ${cores.detalhe};
+    text-decoration: underline;
   }
 `

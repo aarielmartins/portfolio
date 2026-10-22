@@ -11,7 +11,7 @@ const posts = [
   {
     id: 'trama',
     author: 'Ariel Martins',
-    handle: '@aarielmartins',
+    user: '@aarielmartins',
     initials: 'am',
     date: '02 out. 2026',
     category: 'Frontend',

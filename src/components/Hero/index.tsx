@@ -1,6 +1,6 @@
 import { FiGithub, FiArrowUpRight, FiMapPin, FiCode } from 'react-icons/fi'
-import { MdVerified } from 'react-icons/md'
 import { FaLinkedinIn } from 'react-icons/fa'
+import { HiOutlineCheckBadge } from 'react-icons/hi2'
 
 import Scene3D from '../Scene3D'
 import * as S from './styles'
@@ -29,7 +29,7 @@ const Hero = () => (
       </S.Row>
 
       <S.Name>
-        Ariel Martins <MdVerified size={20} />
+        Ariel Martins <HiOutlineCheckBadge size={20} />
       </S.Name>
       <S.Headline>Front End & creative developer</S.Headline>
       <S.Bio>

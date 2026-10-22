@@ -1,18 +1,20 @@
 import { useState } from 'react'
+import { FiArrowUpRight, FiGithub } from 'react-icons/fi'
+import { HiOutlineCheckBadge } from 'react-icons/hi2'
 import {
-  FiArrowUpRight,
-  FiCheckCircle,
-  FiGithub,
-  FiHeart,
-  FiShare2
-} from 'react-icons/fi'
-import { IoFlameOutline, IoSparklesOutline } from 'react-icons/io5'
+  IoFlame,
+  IoFlameOutline,
+  IoHeart,
+  IoHeartOutline,
+  IoThumbsUp,
+  IoThumbsUpOutline
+} from 'react-icons/io5'
 
 import * as S from './styles'
 
 export type PostCardProps = {
   author: string
-  handle: string
+  user: string
   initials: string
   avatarUrl?: string
   date: string
@@ -22,77 +24,75 @@ export type PostCardProps = {
   image?: string
   imageAlt?: string
   technologies: string[]
+  love?: number
   likes?: number
-  fires?: number
-  sparks?: number
+  fire?: number
   projectUrl?: string
   githubUrl?: string
 }
 
-type ReactionKey = 'likes' | 'fires' | 'sparks'
+type ReactionKey = 'love' | 'likes' | 'fire'
 
 const PostCard = ({
   author,
-  handle,
+  user,
   initials,
-  avatarUrl,
   date,
   category,
   title,
   description,
   image,
-  imageAlt,
   technologies,
+  love = 0,
   likes = 0,
-  fires = 0,
-  sparks = 0,
+  fire = 0,
   projectUrl,
   githubUrl
 }: PostCardProps) => {
   const [active, setActive] = useState<Record<ReactionKey, boolean>>({
+    love: false,
     likes: false,
-    fires: false,
-    sparks: false
+    fire: false
   })
 
   const toggle = (key: ReactionKey) =>
     setActive((prev) => ({ ...prev, [key]: !prev[key] }))
 
   const reactions = [
-    { key: 'likes', Icon: FiHeart, label: 'Curtir', base: likes },
-    { key: 'fires', Icon: IoFlameOutline, label: 'Em chamas', base: fires },
-    { key: 'sparks', Icon: IoSparklesOutline, label: 'Incrível', base: sparks }
-  ] as const
-
-  const share = async () => {
-    const url = projectUrl ?? githubUrl
-    if (!url) return
-
-    try {
-      if (navigator.share) {
-        await navigator.share({ title, url })
-      } else {
-        await navigator.clipboard?.writeText(url)
-      }
-    } catch (error) {
-      // o usuário fechou o menu de compartilhar, então não há o que tratar
-      console.warn('Compartilhamento cancelado', error)
+    {
+      key: 'love',
+      Icon: IoHeartOutline,
+      ActiveIcon: IoHeart,
+      label: 'Amei',
+      base: love
+    },
+    {
+      key: 'likes',
+      Icon: IoThumbsUpOutline,
+      ActiveIcon: IoThumbsUp,
+      label: 'Curtir',
+      base: likes
+    },
+    {
+      key: 'fire',
+      Icon: IoFlameOutline,
+      ActiveIcon: IoFlame,
+      label: 'Em chamas',
+      base: fire
     }
-  }
+  ] as const
 
   return (
     <S.Post>
       <S.Header>
-        <S.Avatar>
-          {avatarUrl ? <img src={avatarUrl} alt={author} /> : initials}
-        </S.Avatar>
+        <S.Avatar>{initials}</S.Avatar>
 
         <S.Who>
           <strong>
-            {author} <FiCheckCircle size={14} />
+            {author} <HiOutlineCheckBadge size={14} />
           </strong>
           <small>
-            {handle} · {date}
+            {user} · {date}
           </small>
         </S.Who>
 
@@ -104,7 +104,7 @@ const PostCard = ({
 
       {image && (
         <S.Cover>
-          <img src={image} alt={imageAlt ?? `Prévia do projeto ${title}`} />
+          <img src={image} alt={title} />
         </S.Cover>
       )}
 
@@ -116,22 +116,22 @@ const PostCard = ({
 
       <S.Footer>
         <S.Actions>
-          {reactions.map(({ key, Icon, label, base }) => (
-            <S.Reaction
-              key={key}
-              $active={active[key]}
-              onClick={() => toggle(key)}
-              aria-pressed={active[key]}
-              aria-label={label}
-            >
-              <Icon size={18} />
-              {base + (active[key] ? 1 : 0)}
-            </S.Reaction>
-          ))}
+          {reactions.map(({ key, Icon, ActiveIcon, label, base }) => {
+            const Current = active[key] ? ActiveIcon : Icon
 
-          <S.IconButton onClick={share} aria-label="Compartilhar">
-            <FiShare2 size={18} />
-          </S.IconButton>
+            return (
+              <S.Reaction
+                key={key}
+                $active={active[key]}
+                onClick={() => toggle(key)}
+                aria-pressed={active[key]}
+                aria-label={label}
+              >
+                <Current size={18} />
+                {base + (active[key] ? 1 : 0)}
+              </S.Reaction>
+            )
+          })}
 
           {githubUrl && (
             <S.IconLink
@@ -146,7 +146,12 @@ const PostCard = ({
         </S.Actions>
 
         {projectUrl && (
-          <S.ProjectLink href={projectUrl} target="_blank" rel="noreferrer">
+          <S.ProjectLink
+            href={projectUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Ver projeto"
+          >
             Ver projeto <FiArrowUpRight size={16} />
           </S.ProjectLink>
         )}
