@@ -14,7 +14,8 @@ export const texto = {
   detalhe: '16px',
   subtitulo: '20px',
   chamada: '13px',
-  titulo: '28px'
+  titulo: '28px',
+  pequena: '11px'
 }
 
 export const breakpoints = {

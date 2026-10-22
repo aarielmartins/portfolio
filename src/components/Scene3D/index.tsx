@@ -15,6 +15,10 @@ useGLTF.preload(MODEL_PATH)
 
 const Scene3D = () => (
   <S.Wrapper aria-hidden="true">
+    <S.Label>
+      <span>Mesa de projeto / 001</span>
+      <span>Onde o código acontece</span>
+    </S.Label>
     <Canvas camera={{ position: [4, 3, 5], fov: 40 }} dpr={[1, 2]}>
       <ambientLight intensity={0.9} />
       <hemisphereLight intensity={0.8} />

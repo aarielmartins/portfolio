@@ -1,13 +1,12 @@
-// import { profile, projects, stack } from '../../data'
-// import { scrollToSection } from '../../utils'
-// import { Avatar, Button } from '../../styles'
+import { FiGithub, FiArrowUpRight, FiMapPin, FiCode } from 'react-icons/fi'
+import { MdVerified } from 'react-icons/md'
+import { FaLinkedinIn } from 'react-icons/fa'
 
 import Scene3D from '../Scene3D'
 import * as S from './styles'
 
 const Hero = () => (
   <S.Section id="feed">
-    {/* <S.Banner aria-hidden="true" /> */}
     <Scene3D />
 
     <S.Body>
@@ -17,18 +16,46 @@ const Hero = () => (
         </S.AvatarWrap>
 
         <S.Actions>
-          <button>GitHub</button>
-          <button>LinkedIn</button>
-          <button>Vamos conversar</button>
+          <a href="https://github.com/aarielmartins">
+            <FiGithub /> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/aarielmartins/">
+            <FaLinkedinIn /> LinkedIn
+          </a>
+          <a href="#">
+            Vamos conversar <FiArrowUpRight />
+          </a>
         </S.Actions>
       </S.Row>
 
-      <S.Name>Ariel</S.Name>
-      <S.Handle>lalalla · dev</S.Handle>
+      <S.Name>
+        Ariel Martins <MdVerified size={20} />
+      </S.Name>
+      <S.Headline>Front End & creative developer</S.Headline>
+      <S.Bio>
+        Entre código, design e mundos 3D. Transformando ideias em experiências
+        que fazem sentido.
+      </S.Bio>
 
-      <S.Headline>GGGGGGGGGGG</S.Headline>
-      <S.Bio>gggggggggggggggg</S.Bio>
-      <S.Meta>riooo</S.Meta>
+      <S.Meta>
+        <span>
+          <FiMapPin /> Rio de Janeiro, Brasil
+        </span>
+        <span>
+          <FiCode />
+        </span>
+      </S.Meta>
+
+      <S.Stats>
+        <span>
+          <b>04</b> projetos
+        </span>
+        <span>
+          <b>20</b> tecnologias
+        </span>
+      </S.Stats>
+
+      <S.Note>Explore meus projetos no feed</S.Note>
     </S.Body>
   </S.Section>
 )
