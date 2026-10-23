@@ -100,3 +100,7 @@ export const career: CareerProps = {
     }
   ]
 }
+
+export const contact = {
+  email: 'a.martiins.am@gmail.com'
+}
