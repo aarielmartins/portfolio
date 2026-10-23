@@ -70,3 +70,33 @@ export const posts = [
     ]
   }
 ]
+
+import { CareerProps } from '../components/Career'
+
+export const career: CareerProps = {
+  experience: [
+    {
+      title: 'Modelista 3D de imagens',
+      place: 'Domus Arquitetura Digital',
+      period: '2019 — atual',
+      description:
+        'Modelagem 3D e produção de imagens para projetos de arquitetura, no Rio de Janeiro.'
+    }
+  ],
+  education: [
+    {
+      title: 'Full Stack Python',
+      place: 'EBAC',
+      period: '2026',
+      description:
+        'Curso de desenvolvimento Full Stack com Python, concluído em maio de 2026.'
+    },
+    {
+      title: 'Bacharelado em Arquitetura e Urbanismo',
+      place: 'UFMS',
+      period: '2018',
+      description:
+        'Formação em projeto, espaço e representação, que hoje inspira meu olhar para interfaces.'
+    }
+  ]
+}

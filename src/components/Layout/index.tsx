@@ -5,7 +5,8 @@ import * as S from './styles'
 import Hero from '../Hero'
 
 import PostCard from '../PostCard'
-import { posts } from '../../data'
+import { career, posts } from '../../data'
+import Career from '../Career'
 
 const Layout = () => (
   <S.Container>
@@ -15,6 +16,7 @@ const Layout = () => (
       {posts.map(({ id, ...post }) => (
         <PostCard key={id} {...post} />
       ))}
+      <Career {...career} />
     </S.Feed>
     <RightPanel />
   </S.Container>
