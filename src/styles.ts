@@ -5,6 +5,7 @@ export const cores = {
   cinzaClaro: '#f7f6f6',
   cinza: '#888888',
   chumbo: '#1f1f1f',
+  pretoClaro: '#0f0f0f',
   preto: '#000000',
   detalhe: '#5ac205',
   detalheClaro: '#aaeb8b'
@@ -36,6 +37,7 @@ export const GlobalCSS = createGlobalStyle`
     background-color: ${cores.preto};
     color: ${cores.branco};
     font-size: 14px;
+    padding: 0 60px;
   }
 
   html {

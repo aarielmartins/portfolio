@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react'
-import { ArrowUpRight, Home, Layers, Mail, User } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowUpRight, Home, User } from 'lucide-react'
 
 // import { profile } from '../../data'
 // import { scrollToSection } from '../../utils'
 // import { Avatar, Button } from '../../styles'
 
+import { Block } from '../RightPanel/styles'
 import * as S from './styles'
 
 const items = [
   { id: 'feed', label: 'Feed', Icon: Home },
-  { id: 'sobre', label: 'Sobre mim', Icon: User },
-  { id: 'stack', label: 'Minhas stacks', Icon: Layers }
+  { id: 'sobre', label: 'Sobre mim', Icon: User }
 ]
 
 const Sidebar = () => {
@@ -57,6 +57,30 @@ const Sidebar = () => {
           </S.NavItem>
         ))}
       </S.Nav>
+
+      <Block>
+        <h3>Também no meu radar</h3>
+        <S.Radar>
+          <li>
+            <div>
+              <h1>GAMES & EXPERIÊNCIAS</h1>
+              <h2>
+                Estudos de C# & Unity para agregar meus conhecimentos de 3D à
+                programação
+              </h2>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h1>FUNDAMENTOS DE PROGRAMAÇÃO</h1>
+              <h2>
+                Estudos de algoritmos, estruturas de dados e system design para
+                fortalecer minha base técnica.
+              </h2>
+            </div>
+          </li>
+        </S.Radar>
+      </Block>
 
       <S.Bottom>
         <button

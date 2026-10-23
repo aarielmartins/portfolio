@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { FiArrowUpRight, FiGithub } from 'react-icons/fi'
 import { HiOutlineCheckBadge } from 'react-icons/hi2'
 import {
+  IoChatbubble,
+  IoChatbubbleOutline,
   IoFlame,
   IoFlameOutline,
   IoHeart,
@@ -11,6 +13,14 @@ import {
 } from 'react-icons/io5'
 
 import * as S from './styles'
+
+export type PostComment = {
+  id: string | number
+  author: string
+  initials: string
+  date: string
+  text: string
+}
 
 export type PostCardProps = {
   author: string
@@ -29,6 +39,7 @@ export type PostCardProps = {
   fire?: number
   projectUrl?: string
   githubUrl?: string
+  comments?: PostComment[]
 }
 
 type ReactionKey = 'love' | 'likes' | 'fire'
@@ -47,16 +58,15 @@ const PostCard = ({
   likes = 0,
   fire = 0,
   projectUrl,
-  githubUrl
+  githubUrl,
+  comments = []
 }: PostCardProps) => {
-  const [active, setActive] = useState<Record<ReactionKey, boolean>>({
-    love: false,
-    likes: false,
-    fire: false
-  })
+  const [showComments, setShowComments] = useState(false)
+  const commentsId = useId()
+  const [selected, setSelected] = useState<ReactionKey | null>(null)
 
   const toggle = (key: ReactionKey) =>
-    setActive((prev) => ({ ...prev, [key]: !prev[key] }))
+    setSelected((prev) => (prev === key ? null : key))
 
   const reactions = [
     {
@@ -77,10 +87,12 @@ const PostCard = ({
       key: 'fire',
       Icon: IoFlameOutline,
       ActiveIcon: IoFlame,
-      label: 'Em chamas',
+      label: 'Irado',
       base: fire
     }
   ] as const
+
+  const CommentsIcon = showComments ? IoChatbubble : IoChatbubbleOutline
 
   return (
     <S.Post>
@@ -104,7 +116,14 @@ const PostCard = ({
 
       {image && (
         <S.Cover>
-          <img src={image} alt={title} />
+          <a
+            href={projectUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Ver projeto"
+          >
+            <img src={image} alt={title} />
+          </a>
         </S.Cover>
       )}
 
@@ -117,21 +136,37 @@ const PostCard = ({
       <S.Footer>
         <S.Actions>
           {reactions.map(({ key, Icon, ActiveIcon, label, base }) => {
-            const Current = active[key] ? ActiveIcon : Icon
+            const isActive = selected === key
+            const Current = isActive ? ActiveIcon : Icon
 
             return (
               <S.Reaction
                 key={key}
-                $active={active[key]}
+                $active={isActive}
                 onClick={() => toggle(key)}
-                aria-pressed={active[key]}
+                aria-pressed={isActive}
                 aria-label={label}
               >
                 <Current size={18} />
-                {base + (active[key] ? 1 : 0)}
+                {base + (isActive ? 1 : 0)}
               </S.Reaction>
             )
           })}
+
+          {comments.length > 0 && (
+            <S.CommentsButton
+              $active={showComments}
+              onClick={() => setShowComments((v) => !v)}
+              aria-expanded={showComments}
+              aria-controls={commentsId}
+              aria-label={
+                showComments ? 'Ocultar comentários' : 'Ver comentários'
+              }
+            >
+              <CommentsIcon size={18} />
+              {comments.length}
+            </S.CommentsButton>
+          )}
 
           {githubUrl && (
             <S.IconLink
@@ -156,6 +191,26 @@ const PostCard = ({
           </S.ProjectLink>
         )}
       </S.Footer>
+
+      {showComments && comments.length > 0 && (
+        <S.Comments id={commentsId}>
+          <S.CommentList>
+            {comments.map((comment) => (
+              <S.Comment key={comment.id}>
+                <S.CommentAvatar>{comment.initials}</S.CommentAvatar>
+
+                <S.CommentBubble>
+                  <S.CommentHeader>
+                    <strong>{comment.author}</strong>
+                    <small>· {comment.date}</small>
+                  </S.CommentHeader>
+                  <p>{comment.text}</p>
+                </S.CommentBubble>
+              </S.Comment>
+            ))}
+          </S.CommentList>
+        </S.Comments>
+      )}
     </S.Post>
   )
 }

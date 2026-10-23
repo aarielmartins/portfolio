@@ -28,8 +28,6 @@ import { PiFileSqlBold } from 'react-icons/pi'
 
 import * as S from './styles'
 
-const icons = { box: Box, code: Code2, gamepad: Gamepad2 }
-
 const RightPanel = () => (
   <S.Aside>
     <S.Block>
@@ -176,31 +174,6 @@ const RightPanel = () => (
         </li>
       </S.StackGrid>
     </S.Block>
-
-    <S.Block>
-      <h3>Também no meu radar</h3>
-      <S.Radar>
-        <li>
-          <div>
-            <h1>GAMES & EXPERIÊNCIAS</h1>
-            <p>
-              Estudos de C# & Unity para agregar meus conhecimentos de 3D à
-              programação
-            </p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h1>FUNDAMENTOS DE PROGRAMAÇÃO</h1>
-            <p>
-              Me aprofundando no estudos de algoritmos, estruturas de dados e
-              system design para fortalecer minha base técnica.
-            </p>
-          </div>
-        </li>
-      </S.Radar>
-    </S.Block>
-
     <S.Foot>
       <p>Feito com React & muita curiosidade.</p>
       <p>Do Brasil para a web.</p>

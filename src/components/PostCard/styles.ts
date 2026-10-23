@@ -164,6 +164,10 @@ export const IconLink = styled.a`
   ${iconBase}
 `
 
+export const CommentsButton = styled.button`
+  ${iconBase}
+`
+
 export const ProjectLink = styled.a`
   display: inline-flex;
   align-items: center;
@@ -175,5 +179,74 @@ export const ProjectLink = styled.a`
   &:hover {
     color: ${cores.detalhe};
     text-decoration: underline;
+  }
+`
+
+export const Comments = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 4px;
+  padding-top: 20px;
+  border-top: 1px solid ${cores.chumbo};
+`
+
+export const CommentList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`
+
+export const Comment = styled.li`
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+`
+
+export const CommentAvatar = styled.div`
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: ${cores.detalhe};
+  color: ${cores.preto};
+  font-size: ${texto.detalhe};
+  font-weight: 700;
+  text-transform: uppercase;
+`
+
+export const CommentBubble = styled.div`
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: ${cores.pretoClaro};
+
+  p {
+    margin-top: 4px;
+    color: ${cores.cinza};
+    overflow-wrap: anywhere;
+  }
+`
+
+export const CommentHeader = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 6px;
+
+  strong {
+    font-weight: 600;
+    color: ${cores.branco};
+  }
+
+  small {
+    font-size: ${texto.pequena};
+    color: ${cores.cinza};
   }
 `

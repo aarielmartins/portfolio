@@ -5,9 +5,18 @@ import { breakpoints, cores, texto } from '../../styles'
 export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  height: 100%;
-  padding: 38px 30px;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   /* @media (max-width: ${breakpoints.tablet}) {
     display: none;
@@ -18,8 +27,15 @@ export const Block = styled.section`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid ${cores.chumbo};
+
+  h2 {
+    font-size: ${texto.chamada};
+    color: ${cores.branco};
+    font-weight: 300;
+  }
 
   h3 {
     font-weight: 600;
@@ -80,41 +96,10 @@ export const StackGrid = styled.ul`
   }
 `
 
-export const Radar = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-
-  li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: ${cores.cinza};
-  }
-
-  strong {
-    display: block;
-    font-size: 13px;
-    color: ${cores.branco};
-  }
-
-  small {
-    font-size: 11px;
-  }
-
-  p {
-    padding-top: 4px;
-    color: ${cores.branco};
-    font-size: ${texto.chamada};
-  }
-
-  h1 {
-    font-size: ${texto.chamada};
-    font-weight: 600;
-  }
-`
-
 export const Foot = styled.footer`
+  margin-top: auto;
   font-size: ${texto.chamada};
   color: ${cores.cinza};
+  padding-top: 30px;
+  padding-bottom: 30px;
 `
