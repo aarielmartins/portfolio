@@ -1,4 +1,4 @@
-import { FiGithub, FiArrowUpRight, FiMapPin, FiCode } from 'react-icons/fi'
+import { FiGithub, FiMapPin, FiCode } from 'react-icons/fi'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { HiOutlineCheckBadge } from 'react-icons/hi2'
 
@@ -16,14 +16,19 @@ const Hero = () => (
         </S.AvatarWrap>
 
         <S.Actions>
-          <a href="https://github.com/aarielmartins">
+          <a
+            href="https://github.com/aarielmartins"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FiGithub /> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/aarielmartins/">
+          <a
+            href="https://www.linkedin.com/in/aarielmartins/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaLinkedinIn /> LinkedIn
-          </a>
-          <a href="#">
-            Vamos conversar <FiArrowUpRight />
           </a>
         </S.Actions>
       </S.Row>

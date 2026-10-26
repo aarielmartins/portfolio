@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 import { breakpoints, cores, texto } from '../../styles'
 
-const mono = `'JetBrains Mono', ui-monospace, monospace`
-
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -11,24 +9,14 @@ export const Section = styled.section`
   padding: 40px 28px;
   border-bottom: 1px solid ${cores.chumbo};
 
-  @media (max-width: ${breakpoints.mobile}) {
+  /* @media (max-width: ${breakpoints.mobile}) {
     padding-inline: 18px;
-  }
-`
-
-export const Eyebrow = styled.small`
-  font-family: ${mono};
-  font-size: ${texto.pequena};
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: ${cores.cinza};
+  } */
 `
 
 export const Title = styled.h2`
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: ${texto.titulo};
+  font-weight: 600;
   color: ${cores.branco};
 
   span {
@@ -37,7 +25,6 @@ export const Title = styled.h2`
 `
 
 export const Text = styled.p`
-  font-size: ${texto.chamada};
   color: ${cores.cinza};
 `
 
@@ -46,6 +33,26 @@ export const Actions = styled.div`
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 8px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid ${cores.cinza};
+    background-color: transparent;
+    color: ${cores.branco};
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: ${cores.chumbo};
+    }
+  }
 `
 
 export const CopyButton = styled.button`
@@ -57,8 +64,6 @@ export const CopyButton = styled.button`
   border-radius: 10px;
   background-color: ${cores.detalhe};
   color: ${cores.preto};
-  font-family: inherit;
-  font-size: ${texto.chamada};
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.15s;
@@ -86,13 +91,4 @@ export const MailLink = styled.a`
     background-color: ${cores.chumbo};
     border-color: ${cores.cinza};
   }
-`
-
-export const Note = styled.small`
-  margin-top: 6px;
-  font-family: ${mono};
-  font-size: ${texto.pequena};
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: ${cores.cinza};
 `

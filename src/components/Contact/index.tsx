@@ -1,26 +1,13 @@
 import { useEffect, useState } from 'react'
-import { FiArrowUpRight, FiCheck, FiCopy } from 'react-icons/fi'
+import { FiCheck, FiCopy, FiGithub } from 'react-icons/fi'
 
 import * as S from './styles'
+import { FaLinkedinIn } from 'react-icons/fa'
 
-export type ContactProps = {
-  email: string
-  eyebrow?: string
-  title?: string
-  text?: string
-  note?: string
-}
-
-const Contact = ({
-  email,
-  eyebrow = 'Próximo capítulo',
-  title = 'Boas ideias começam com um oi',
-  text = 'Tem um projeto em mente ou quer trocar uma ideia?',
-  note
-}: ContactProps) => {
+const Contact = () => {
   const [copied, setCopied] = useState(false)
 
-  // volta o botão ao normal depois de alguns segundos
+  // volta o botão ao normal depois de 2 segundos
   useEffect(() => {
     if (!copied) return
 
@@ -28,8 +15,11 @@ const Contact = ({
     return () => clearTimeout(timer)
   }, [copied])
 
+  //função assíncrona para usar o await no meio dela
+  const email = 'a.martiins.am@gmail.com'
   const copyEmail = async () => {
     try {
+      //API do navegador que solicita cópia do texto do email
       await navigator.clipboard.writeText(email)
       setCopied(true)
     } catch (error) {
@@ -40,14 +30,12 @@ const Contact = ({
 
   return (
     <S.Section id="contato">
-      <S.Eyebrow>{eyebrow}</S.Eyebrow>
-
       <S.Title>
-        {title}
+        Boas ideias começam com um oi
         <span>.</span>
       </S.Title>
 
-      <S.Text>{text}</S.Text>
+      <S.Text>Se quiser trocar uma ideia, entre em contato:</S.Text>
 
       <S.Actions>
         <S.CopyButton type="button" onClick={copyEmail} aria-live="polite">
@@ -55,12 +43,21 @@ const Contact = ({
           {copied ? 'E-mail copiado' : email}
         </S.CopyButton>
 
-        <S.MailLink href={`mailto:${email}`}>
-          Enviar e-mail <FiArrowUpRight size={16} />
-        </S.MailLink>
+        <a
+          href="https://github.com/aarielmartins"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FiGithub /> GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/aarielmartins/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedinIn /> LinkedIn
+        </a>
       </S.Actions>
-
-      {note && <S.Note>{note}</S.Note>}
     </S.Section>
   )
 }

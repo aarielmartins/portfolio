@@ -101,12 +101,12 @@ export const Bottom = styled.div`
   gap: 30px;
   margin-top: auto;
 
-  & button {
+  & a {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
-    padding: 8px 14px;
+    padding: 10px 18px;
     border-radius: 10px;
     border: none;
     font-size: ${texto.detalhe};

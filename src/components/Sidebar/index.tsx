@@ -83,13 +83,9 @@ const Sidebar = () => {
       </Block>
 
       <S.Bottom>
-        <button
-        // $variant="accent"
-        // $block
-        // onClick={() => scrollToSection('contato')}
-        >
+        <a href="#contato">
           Vamos conversar? <ArrowUpRight size={20} />
-        </button>
+        </a>
 
         <S.Me>
           <S.Acronym>AM</S.Acronym>
