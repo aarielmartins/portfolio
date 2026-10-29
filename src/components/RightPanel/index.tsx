@@ -36,8 +36,7 @@ const RightPanel = () => (
         Uma desenvolvedora que acredita que a melhor experiência está no
         encontro entre <strong>design, funcionalidade e tecnologia.</strong>
       </p>
-      <S.TextLink>
-        {/* onClick={() => scrollToSection('sobre')} */}
+      <S.TextLink href="#carreira">
         Mais sobre mim <ArrowDown size={16} />
       </S.TextLink>
     </S.Block>

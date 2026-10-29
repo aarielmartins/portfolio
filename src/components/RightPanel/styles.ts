@@ -53,7 +53,7 @@ export const Block = styled.section`
   }
 `
 
-export const TextLink = styled.button`
+export const TextLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 6px;
