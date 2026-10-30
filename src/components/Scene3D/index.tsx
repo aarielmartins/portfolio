@@ -70,7 +70,7 @@ const Scene3D = () => (
       </Environment>
 
       <Suspense fallback={null}>
-        <Bounds fit observe margin={0.3}>
+        <Bounds fit observe margin={1.0}>
           <Center>
             <Model />
           </Center>

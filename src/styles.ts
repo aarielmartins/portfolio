@@ -7,8 +7,8 @@ export const cores = {
   chumbo: '#1f1f1f',
   pretoClaro: '#0f0f0f',
   preto: '#000000',
-  detalhe: '#5ac205',
-  detalheClaro: '#aaeb8b'
+  detalhe: '#7dd857',
+  detalheClaro: '#a7c999'
 }
 
 export const texto = {
