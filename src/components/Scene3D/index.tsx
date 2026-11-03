@@ -48,7 +48,7 @@ const Scene3D = () => (
       <span>Onde o código acontece</span>
     </S.Label>
 
-    <Canvas camera={{ position: [4, 3, 5], fov: 40 }} dpr={[1, 2]}>
+    <Canvas camera={{ position: [4, 8, 5], fov: 40 }} dpr={[1, 2]}>
       <ambientLight intensity={0.8} />
       <directionalLight position={[5, 6, 4]} intensity={1.6} />
       <directionalLight position={[-5, 3, -4]} intensity={0.8} />
@@ -70,7 +70,7 @@ const Scene3D = () => (
       </Environment>
 
       <Suspense fallback={null}>
-        <Bounds fit observe margin={1.0}>
+        <Bounds fit observe margin={0.3}>
           <Center>
             <Model />
           </Center>
@@ -78,10 +78,13 @@ const Scene3D = () => (
       </Suspense>
 
       <OrbitControls
+        target={[0, 0, 0]}
         autoRotate
         autoRotateSpeed={1.5}
         enableZoom={false}
         enablePan={false}
+        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2}
       />
     </Canvas>
   </S.Wrapper>

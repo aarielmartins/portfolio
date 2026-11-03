@@ -72,10 +72,10 @@
 		<count>5</count>
 		<item_version>0</item_version>
 		<item>1</item>
-		<item>16</item>
+		<item>18</item>
 		<item>1</item>
-		<item>95</item>
-		<item>87</item>
+		<item>86</item>
+		<item>78</item>
 	</v2>
 </e>
 <e class_id_reference="2">
@@ -1612,7 +1612,7 @@
 				<strData>false</strData>
 			</item>
 			<item>
-				<strData>1.52</strData>
+				<strData>1.60</strData>
 			</item>
 			<item>
 				<strData>103</strData>
