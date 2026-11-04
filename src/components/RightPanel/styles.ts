@@ -18,9 +18,9 @@ export const Aside = styled.aside`
     display: none;
   }
 
-  /* @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     display: none;
-  } */
+  }
 `
 
 export const Block = styled.section`
@@ -67,32 +67,6 @@ export const TextLink = styled.a`
 
   &:hover {
     text-decoration: underline;
-  }
-`
-
-export const StackGrid = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 14px;
-
-  li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: ${texto.chamada};
-    font-weight: 600;
-
-    & span {
-      padding: 6px;
-      border: 1px solid ${cores.chumbo};
-      display: flex;
-      align-items: center;
-      border-radius: 4px;
-    }
-
-    & svg {
-      color: ${cores.detalhe};
-    }
   }
 `
 

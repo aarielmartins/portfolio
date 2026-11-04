@@ -20,7 +20,7 @@ export const texto = {
 }
 
 export const breakpoints = {
-  tablet: '1100px',
+  tablet: '1200px',
   mobile: '760px'
 }
 
@@ -38,6 +38,10 @@ export const GlobalCSS = createGlobalStyle`
     color: ${cores.branco};
     font-size: 14px;
     padding: 0 60px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+    padding: 0 ;
+  }
   }
 
   html {

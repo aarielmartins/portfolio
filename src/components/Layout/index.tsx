@@ -8,6 +8,7 @@ import PostCard from '../PostCard'
 import { career, posts } from '../../data'
 import Career from '../Career'
 import Contact from '../Contact'
+import Stacks from '../Stacks'
 
 const Layout = () => (
   <S.Container>
@@ -18,6 +19,11 @@ const Layout = () => (
         <PostCard key={id} {...post} />
       ))}
       <Career {...career} />
+      <S.MobileOnly>
+        <S.Section>
+          <Stacks />
+        </S.Section>
+      </S.MobileOnly>
       <Contact />
     </S.Feed>
     <RightPanel />

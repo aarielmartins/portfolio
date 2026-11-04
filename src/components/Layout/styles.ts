@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, cores, texto } from '../../styles'
 
 export const Container = styled.div`
   display: grid;
@@ -8,11 +8,11 @@ export const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
 
-  /* @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 240px minmax(0, 1fr);
   }
 
-  @media (max-width: ${breakpoints.mobile}) {
+  /* @media (max-width: ${breakpoints.mobile}) {
     grid-template-columns: 1fr;
   } */
 `
@@ -39,4 +39,34 @@ export const Feed = styled.main`
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
   } */
+`
+
+export const MobileOnly = styled.div`
+  display: none;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: block;
+  }
+`
+
+export const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px 28px;
+  border-bottom: 1px solid ${cores.chumbo};
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    color: ${cores.cinza};
+  }
+
+  h3 {
+    font-size: ${texto.titulo};
+    font-weight: 600;
+    color: ${cores.branco};
+  }
 `
