@@ -10,7 +10,8 @@ import * as S from './styles'
 
 const items = [
   { id: 'feed', label: 'Feed', Icon: Home },
-  { id: 'sobre', label: 'Sobre mim', Icon: User }
+  { id: 'sobre', label: 'Sobre mim', Icon: User },
+  { id: 'stacks', label: 'Stacks', Icon: User, mobileOnly: true }
 ]
 
 const Sidebar = () => {
@@ -45,10 +46,11 @@ const Sidebar = () => {
       </S.Logo>
 
       <S.Nav aria-label="Principal">
-        {items.map(({ id, label, Icon }) => (
+        {items.map(({ id, label, Icon, mobileOnly }) => (
           <S.NavItem
             key={id}
             $active={active === id}
+            $mobileOnly={mobileOnly}
             // $active={active === id}
             // onClick={() => scrollToSection(id)}
           >
