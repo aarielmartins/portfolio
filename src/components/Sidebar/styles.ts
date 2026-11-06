@@ -21,19 +21,6 @@ export const Aside = styled.aside`
   @media (max-width: ${breakpoints.mobile}) {
     display: none;
   }
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 20;
-    height: auto;
-    padding: 6px 10px;
-    flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.92);
-    border-top: 1px solid ${cores.cinza};
-  } */
 `
 
 export const Logo = styled.div`
@@ -45,10 +32,6 @@ export const Logo = styled.div`
     font-weight: 800;
     margin-right: 6px;
   }
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    display: none;
-  } */
 `
 
 export const Bottom = styled.div`
@@ -80,10 +63,6 @@ export const Bottom = styled.div`
     color: ${cores.preto};
     transition: color 0.15s;
   }
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    display: none;
-  } */
 `
 
 export const Me = styled.div`

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { breakpoints, cores, texto } from '../../styles'
+import { cores, texto } from '../../styles'
 
 export const Post = styled.article`
   display: flex;
@@ -8,10 +8,6 @@ export const Post = styled.article`
   gap: 14px;
   padding: 24px 28px;
   border-bottom: 1px solid ${cores.chumbo};
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    padding-inline: 18px;
-  } */
 `
 
 export const Header = styled.header`

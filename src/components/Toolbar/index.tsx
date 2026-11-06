@@ -11,35 +11,12 @@ const items = [
 const Toolbar = () => {
   const [active, setActive] = useState('feed')
 
-  // onClick={() => { setActive(id); scrollToSection(id) }}
-
-  // destaca no menu a seção que está visível no feed
-  // useEffect(() => {
-  //   const root = document.getElementById('feed-scroll')
-  //   if (!root) return
-
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) setActive(entry.target.id)
-  //       })
-  //     },
-  //     { root, rootMargin: '-20% 0px -60% 0px' }
-  //   )
-
-  //   items.forEach(({ id }) => {
-  //     const el = document.getElementById(id)
-  //     if (el) observer.observe(el)
-  //   })
-
-  //   return () => observer.disconnect()
-  // }, [])
-
   return (
-    <S.Nav aria-label="Principal">
+    <S.Nav>
       {items.map(({ id, label, Icon, mobileOnly }) => (
         <S.NavItem
           key={id}
+          href={`#${id}`}
           $active={active === id}
           $mobileOnly={mobileOnly}
           onClick={() => setActive(id)}

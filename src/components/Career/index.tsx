@@ -42,7 +42,7 @@ const Group = ({ label, items, Icon }: GroupProps) => (
 )
 
 const Career = ({ experience, education }: CareerProps) => (
-  <S.Section id="carreira">
+  <S.Section id="sobre">
     <S.Title>
       Carreira <span>&</span> Formação
     </S.Title>

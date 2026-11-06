@@ -17,7 +17,7 @@ const MODEL_PATH = '/models/cena.glb'
 const Model = () => {
   const { scene } = useGLTF(MODEL_PATH)
 
-  // materiais muito metálicos ficam pretos sem reflexo, então suavizamos
+  // suaviza materiais sem reflexo
   useEffect(() => {
     scene.traverse((obj) => {
       const mesh = obj as Mesh

@@ -1,9 +1,5 @@
 import { ArrowDown } from 'lucide-react'
 
-// import { radar, stack } from '../../data'
-// import { scrollToSection } from '../../utils'
-// import { Button, ChipIcon, Status } from '../../styles'
-
 import * as S from './styles'
 import Stacks from '../Stacks'
 

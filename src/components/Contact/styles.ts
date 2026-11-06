@@ -8,10 +8,6 @@ export const Section = styled.section`
   gap: 14px;
   padding: 40px 28px;
   border-bottom: 1px solid ${cores.chumbo};
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    padding-inline: 18px;
-  } */
 `
 
 export const Title = styled.h2`

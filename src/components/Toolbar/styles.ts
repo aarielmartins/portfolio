@@ -24,7 +24,7 @@ export const Nav = styled.nav`
   }
 `
 
-export const NavItem = styled.button<NavItemProps>`
+export const NavItem = styled.a<NavItemProps>`
   display: flex;
   align-items: center;
   gap: 14px;

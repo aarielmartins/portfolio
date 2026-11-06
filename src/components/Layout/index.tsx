@@ -19,12 +19,14 @@ const Layout = () => (
       <S.MobileOnly>
         <Toolbar />
       </S.MobileOnly>
-      {posts.map(({ id, ...post }) => (
-        <PostCard key={id} {...post} />
-      ))}
+      <section id="feed">
+        {posts.map(({ id, ...post }) => (
+          <PostCard key={id} {...post} />
+        ))}
+      </section>
       <Career {...career} />
       <S.TabletOnly>
-        <S.Section>
+        <S.Section id="stacks">
           <Stacks />
         </S.Section>
       </S.TabletOnly>

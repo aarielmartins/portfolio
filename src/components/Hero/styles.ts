@@ -7,10 +7,6 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 28px 28px;
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    padding-inline: 18px;
-  } */
 `
 
 export const Row = styled.div`

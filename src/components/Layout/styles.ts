@@ -18,27 +18,12 @@ export const Container = styled.div`
 `
 
 export const Feed = styled.main`
-  height: 100%;
-  overflow-y: auto;
   border-left: 1px solid ${cores.chumbo};
   border-right: 1px solid ${cores.chumbo};
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
   scrollbar-width: thin;
   scrollbar-color: ${cores.chumbo} transparent;
-
-  /* @media (max-width: ${breakpoints.tablet}) {
-    border-right: 0;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    border: 0;
-    padding-bottom: 72px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    scroll-behavior: auto;
-  } */
 `
 
 export const TabletOnly = styled.div`
@@ -52,8 +37,12 @@ export const TabletOnly = styled.div`
 export const MobileOnly = styled.div`
   display: none;
 
-  @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${breakpoints.tablet}) {
     display: block;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: ${cores.preto};
   }
 `
 
