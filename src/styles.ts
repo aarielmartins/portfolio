@@ -37,7 +37,7 @@ export const GlobalCSS = createGlobalStyle`
     background-color: ${cores.preto};
     color: ${cores.branco};
     font-size: 14px;
-    padding: 0 60px;
+    padding: 0 5px;
 
     @media (max-width: ${breakpoints.tablet}) {
     padding: 0 ;

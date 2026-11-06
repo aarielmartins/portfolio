@@ -53,6 +53,16 @@ export const Actions = styled.div`
       background-color: ${cores.chumbo};
     }
   }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    a {
+      justify-content: center;
+    }
+  }
 `
 
 export const CopyButton = styled.button`
@@ -70,6 +80,12 @@ export const CopyButton = styled.button`
 
   &:hover {
     background-color: ${cores.detalheClaro};
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    grid-column: 1 / -1;
+    justify-content: center;
+    width: 100%;
   }
 `
 

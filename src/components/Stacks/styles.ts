@@ -27,9 +27,29 @@ export const StackGrid = styled.ul`
     }
   }
 
-  @media (max-width: ${breakpoints.tablet}) and (min-width: ${breakpoints.mobile}) {
+  @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
+
+    li {
+      min-height: 54px;
+      padding: 8px 10px;
+      gap: 12px;
+      border: 1px solid ${cores.chumbo};
+      border-radius: 8px;
+      background: ${cores.pretoClaro};
+
+      span {
+        flex-shrink: 0;
+        padding: 7px;
+        border-color: ${cores.chumbo};
+        border-radius: 6px;
+      }
+    }
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     li {
       min-height: 54px;

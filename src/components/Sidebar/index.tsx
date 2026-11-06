@@ -1,64 +1,16 @@
-import { useState } from 'react'
-import { ArrowUpRight, Home, User } from 'lucide-react'
-
-// import { profile } from '../../data'
-// import { scrollToSection } from '../../utils'
-// import { Avatar, Button } from '../../styles'
-
+import { ArrowUpRight } from 'lucide-react'
 import { Block } from '../RightPanel/styles'
 import * as S from './styles'
-
-const items = [
-  { id: 'feed', label: 'Feed', Icon: Home },
-  { id: 'sobre', label: 'Sobre mim', Icon: User },
-  { id: 'stacks', label: 'Stacks', Icon: User, mobileOnly: true }
-]
+import Toolbar from '../Toolbar'
 
 const Sidebar = () => {
-  const [active, setActive] = useState('feed')
-
-  // destaca no menu a seção que está visível no feed
-  // useEffect(() => {
-  //   const root = document.getElementById('feed-scroll')
-  //   if (!root) return
-
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) setActive(entry.target.id)
-  //       })
-  //     },
-  //     { root, rootMargin: '-20% 0px -60% 0px' }
-  //   )
-
-  //   items.forEach(({ id }) => {
-  //     const el = document.getElementById(id)
-  //     if (el) observer.observe(el)
-  //   })
-
-  //   return () => observer.disconnect()
-  // }, [])
-
   return (
     <S.Aside>
       <S.Logo>
         <span>a/</span> ariel.dev <span>*</span>
       </S.Logo>
 
-      <S.Nav aria-label="Principal">
-        {items.map(({ id, label, Icon, mobileOnly }) => (
-          <S.NavItem
-            key={id}
-            $active={active === id}
-            $mobileOnly={mobileOnly}
-            // $active={active === id}
-            // onClick={() => scrollToSection(id)}
-          >
-            <Icon size={20} />
-            <span>{label}</span>
-          </S.NavItem>
-        ))}
-      </S.Nav>
+      <Toolbar />
 
       <Block>
         <h3>Também no meu radar</h3>

@@ -9,21 +9,25 @@ import { career, posts } from '../../data'
 import Career from '../Career'
 import Contact from '../Contact'
 import Stacks from '../Stacks'
+import Toolbar from '../Toolbar'
 
 const Layout = () => (
   <S.Container>
     <Sidebar />
     <S.Feed>
       <Hero />
+      <S.MobileOnly>
+        <Toolbar />
+      </S.MobileOnly>
       {posts.map(({ id, ...post }) => (
         <PostCard key={id} {...post} />
       ))}
       <Career {...career} />
-      <S.MobileOnly>
+      <S.TabletOnly>
         <S.Section>
           <Stacks />
         </S.Section>
-      </S.MobileOnly>
+      </S.TabletOnly>
       <Contact />
     </S.Feed>
     <RightPanel />

@@ -54,11 +54,15 @@ export const Actions = styled.div`
     border: 1px solid ${cores.cinza};
     background-color: transparent;
     color: ${cores.branco};
-    font-size: 13px;
+    font-size: ${texto.chamada};
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.15s;
+
+    @media (max-width: ${breakpoints.mobile}) {
+      font-size: ${texto.pequena};
+    }
 
     &:hover {
       background-color: ${cores.chumbo};

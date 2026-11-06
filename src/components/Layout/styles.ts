@@ -12,9 +12,9 @@ export const Container = styled.div`
     grid-template-columns: 240px minmax(0, 1fr);
   }
 
-  /* @media (max-width: ${breakpoints.mobile}) {
+  @media (max-width: ${breakpoints.mobile}) {
     grid-template-columns: 1fr;
-  } */
+  }
 `
 
 export const Feed = styled.main`
@@ -41,10 +41,18 @@ export const Feed = styled.main`
   } */
 `
 
-export const MobileOnly = styled.div`
+export const TabletOnly = styled.div`
   display: none;
 
   @media (max-width: ${breakpoints.tablet}) {
+    display: block;
+  }
+`
+
+export const MobileOnly = styled.div`
+  display: none;
+
+  @media (max-width: ${breakpoints.mobile}) {
     display: block;
   }
 `

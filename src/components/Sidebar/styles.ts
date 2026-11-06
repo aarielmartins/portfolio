@@ -2,11 +2,6 @@ import styled from 'styled-components'
 
 import { breakpoints, cores, texto } from '../../styles'
 
-type NavItemProps = {
-  $active: boolean
-  $mobileOnly?: boolean
-}
-
 export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
@@ -20,6 +15,10 @@ export const Aside = styled.aside`
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
     display: none;
   }
 
@@ -50,58 +49,6 @@ export const Logo = styled.div`
   /* @media (max-width: ${breakpoints.mobile}) {
     display: none;
   } */
-`
-
-export const Nav = styled.nav`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-top: 40px;
-  border-bottom: 1px solid ${cores.chumbo};
-  padding-bottom: 30px;
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-  } */
-`
-
-export const NavItem = styled.button<NavItemProps>`
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 14px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-size: ${texto.detalhe};
-  text-align: left;
-  color: ${({ $active }) => ($active ? cores.branco : cores.cinza)};
-  background-color: ${({ $active }) =>
-    $active ? cores.chumbo : 'transparent'};
-  transition: color 0.15s;
-
-  /* Esconde apenas o item exclusivo do mobile */
-  ${({ $mobileOnly }) =>
-    $mobileOnly &&
-    `
-      display: none;
-    `}
-
-  svg {
-    color: ${({ $active }) => ($active ? cores.detalhe : 'inherit')};
-    transition: color 0.15s;
-  }
-
-  &:hover {
-    color: ${cores.branco};
-    background-color: ${cores.chumbo};
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    display: flex;
-  }
 `
 
 export const Bottom = styled.div`
