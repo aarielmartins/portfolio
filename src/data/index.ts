@@ -162,18 +162,32 @@ import { CareerProps } from '../components/Career'
 export const career: CareerProps = {
   experience: [
     {
+      title: 'Desenvolvedora Front End',
+      place: 'Transição de Carreira',
+      period: '2024 — atual',
+      description:
+        'Desenvolvimento de projetos práticos para consolidar conhecimentos em Front End e noções de Back End, com foco em aplicações web completas, versionamento com Git/GitHub e deploy em produção.'
+    },
+    {
       title: 'Modelista 3D de imagens',
       place: 'Domus Arquitetura Digital',
-      period: '2019 — atual',
+      period: '2021 — atual',
       description:
-        'Modelagem 3D e produção de imagens para projetos de arquitetura, no Rio de Janeiro.'
+        'Modelagem 3D e produção de imagens para projetos de lançamento imobiliário de alto padrão, no Rio de Janeiro. Colaboração com arquitetos, artistas 3D e demais profissionais para alinhar demandas, padronizar processos, melhorar o fluxo de produção e garantir qualidade visual e cumprimento de prazos.'
+    },
+    {
+      title: 'Modelador 3D Junior',
+      place: 'Domus Arquitetura Digital',
+      period: '2019 — 2021',
+      description:
+        'Preparação de cenas para renderização e colaboração com a equipe. Aprendizado rápido do 3ds Max, adquirindo domínio da ferramenta em curto período e evoluindo rapidamente na execução das atividades.'
     }
   ],
   education: [
     {
       title: 'Full Stack Python',
       place: 'EBAC',
-      period: '2026',
+      period: '2025 — 2026',
       description:
         'Curso de desenvolvimento Full Stack com Python, concluído em maio de 2026.'
     },
