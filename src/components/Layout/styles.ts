@@ -37,7 +37,7 @@ export const TabletOnly = styled.div`
 export const MobileOnly = styled.div`
   display: none;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.mobile}) {
     display: block;
     position: sticky;
     top: 0;

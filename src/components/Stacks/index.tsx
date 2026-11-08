@@ -82,7 +82,7 @@ const Stacks = () => (
         <span>
           <VscJson size={16} />
         </span>
-        Jason-server
+        Jason-Server
       </li>
       <li>
         <span>
