@@ -33,6 +33,15 @@ const Sidebar = () => {
               </h2>
             </div>
           </li>
+          <li>
+            <div>
+              <h1>INTELIGÊNCIA ARTIFICIAL</h1>
+              <h2>
+                De olho em LLMs, prompt engineering e RAG, para aprender a
+                integrar IA a interfaces e aplicações web.
+              </h2>
+            </div>
+          </li>
         </S.Radar>
       </Block>
 
