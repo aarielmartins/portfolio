@@ -134,8 +134,7 @@ export const Stats = styled.div`
 
 export const Note = styled.small`
   margin-top: 18px;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: ${texto.pequena};
+  font-size: ${texto.chamada};
   text-transform: uppercase;
   color: ${cores.cinza};
 `
