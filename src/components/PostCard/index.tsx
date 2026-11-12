@@ -32,6 +32,7 @@ export type PostCardProps = {
   title: string
   description: string
   image?: string
+  video?: string
   imageAlt?: string
   technologies: string[]
   love?: number
@@ -53,6 +54,7 @@ const PostCard = ({
   title,
   description,
   image,
+  video,
   technologies,
   love = 0,
   likes = 0,
@@ -114,16 +116,15 @@ const PostCard = ({
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>
 
-      {image && (
+      {(image || video) && (
         <S.Cover>
-          <a
-            href={projectUrl}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Ver projeto"
-          >
-            <img src={image} alt={title} />
-          </a>
+          {video ? (
+            <video src={video} controls playsInline preload="metadata" />
+          ) : (
+            <a href={projectUrl} target="_blank" rel="noreferrer">
+              <img src={image} alt={title} />
+            </a>
+          )}
         </S.Cover>
       )}
 

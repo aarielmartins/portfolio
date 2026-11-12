@@ -81,7 +81,8 @@ export const Cover = styled.div`
   border-radius: 8px;
   border: 1px solid ${cores.chumbo};
 
-  img {
+  img,
+  video {
     display: block;
     width: 100%;
     height: auto;

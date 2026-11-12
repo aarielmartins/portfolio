@@ -16,6 +16,7 @@ export const posts = [
     description:
       'Loja virtual de roupas e mobiliário com fluxo completo de compra: catálogo por coleção, página de produto, carrinho global, checkout com formulário validado e API REST própria. Construída com React, TypeScript e Redux Toolkit, com testes automatizados e deploy em produção.',
     image: trama,
+    video: '/videos/trama-video.mp4',
     technologies: [
       'React',
       'TypeScript',
@@ -45,7 +46,7 @@ export const posts = [
         author: 'Mãe',
         initials: 'ma',
         date: '1 semana',
-        text: 'Adorei a gama de tamnhos! Os produtos são lindos, queria comprar na vida real 👀.'
+        text: 'Adorei a gama de tamanhos! Os produtos são lindos, queria comprar na vida real 👀.'
       },
       {
         id: 1,
@@ -224,7 +225,7 @@ export const career: CareerProps = {
     {
       title: 'Full Stack Python',
       place: 'EBAC',
-      period: '2025 — 2026',
+      period: '2024 — 2026',
       description:
         'Curso de desenvolvimento Full Stack com Python, concluído em maio de 2026.'
     },

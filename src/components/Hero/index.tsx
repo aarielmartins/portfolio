@@ -36,7 +36,7 @@ const Hero = () => (
       <S.Name>
         Ariel Martins <HiOutlineCheckBadge size={20} />
       </S.Name>
-      <S.Headline>Front End & creative developer</S.Headline>
+      <S.Headline>Front End & Creative Developer</S.Headline>
       <S.Bio>
         Entre código, design e mundos 3D. Transformando ideias em experiências
         que fazem sentido.
