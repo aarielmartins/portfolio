@@ -1,4 +1,5 @@
-import { useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
+import type { MouseEvent } from 'react'
 import { FiArrowUpRight, FiGithub } from 'react-icons/fi'
 import { HiOutlineCheckBadge } from 'react-icons/hi2'
 import {
@@ -64,8 +65,46 @@ const PostCard = ({
   comments = []
 }: PostCardProps) => {
   const [showComments, setShowComments] = useState(false)
-  const commentsId = useId()
   const [selected, setSelected] = useState<ReactionKey | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const commentsId = useId()
+  const manuallyPaused = useRef(false)
+
+  const togglePlay = () => {
+    const videoElement = videoRef.current
+
+    if (!videoElement) return
+
+    if (videoElement.paused) {
+      manuallyPaused.current = false
+
+      videoElement.play().catch((error) => {
+        console.warn('Erro ao reproduzir vídeo:', error)
+      })
+    } else {
+      manuallyPaused.current = true
+      videoElement.pause()
+    }
+  }
+
+  const handleSeek = (value: number) => {
+    const videoElement = videoRef.current
+
+    if (!videoElement) return
+
+    videoElement.currentTime = value
+    setCurrentTime(value)
+  }
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60)
+    const seconds = Math.floor(time % 60)
+
+    return `${minutes}:${String(seconds).padStart(2, '0')}`
+  }
 
   const toggle = (key: ReactionKey) =>
     setSelected((prev) => (prev === key ? null : key))
@@ -96,6 +135,36 @@ const PostCard = ({
 
   const CommentsIcon = showComments ? IoChatbubble : IoChatbubbleOutline
 
+  useEffect(() => {
+    const videoElement = videoRef.current
+
+    if (!videoElement) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (!manuallyPaused.current) {
+            videoElement.play().catch((error) => {
+              console.warn('Erro ao reproduzir vídeo:', error)
+            })
+          }
+        } else {
+          videoElement.pause()
+        }
+      },
+      {
+        threshold: 0.5
+      }
+    )
+
+    observer.observe(videoElement)
+
+    return () => {
+      observer.disconnect()
+      videoElement.pause()
+    }
+  }, [video])
+
   return (
     <S.Post>
       <S.Header>
@@ -119,15 +188,58 @@ const PostCard = ({
       {(image || video) && (
         <S.Cover>
           {video ? (
-            <video src={video} controls playsInline preload="metadata" />
+            <S.VideoContainer>
+              <video
+                ref={videoRef}
+                src={video}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onTimeUpdate={(e) =>
+                  setCurrentTime(e.currentTarget.currentTime)
+                }
+                onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+                onClick={togglePlay}
+              />
+
+              {!isPlaying && (
+                <S.PlayOverlay
+                  onClick={togglePlay}
+                  aria-label="Reproduzir vídeo"
+                >
+                  ▶
+                </S.PlayOverlay>
+              )}
+
+              <S.VideoControls
+                onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
+              >
+                <input
+                  type="range"
+                  min={0}
+                  max={duration || 0}
+                  step={0.1}
+                  value={currentTime}
+                  onChange={(e) => handleSeek(Number(e.target.value))}
+                  aria-label="Progresso do vídeo"
+                />
+              </S.VideoControls>
+            </S.VideoContainer>
           ) : (
-            <a href={projectUrl} target="_blank" rel="noreferrer">
+            <a
+              href={projectUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Ver projeto"
+            >
               <img src={image} alt={title} />
             </a>
           )}
         </S.Cover>
       )}
-
       <S.Tags>
         {technologies.map((tech) => (
           <li key={tech}>{tech}</li>

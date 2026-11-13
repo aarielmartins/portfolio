@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-
 import { cores, texto } from '../../styles'
 
 export const Post = styled.article`
@@ -245,5 +244,55 @@ export const CommentHeader = styled.div`
   small {
     font-size: ${texto.pequena};
     color: ${cores.cinza};
+  }
+`
+export const VideoContainer = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+`
+
+export const PlayOverlay = styled.button`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+
+  background: ${cores.cinza};
+  color: ${cores.branco};
+  cursor: pointer;
+  font-size: ${texto.titulo};
+`
+
+export const VideoControls = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  color: white;
+
+  input {
+    flex: 1;
+    min-width: 0;
+    accent-color: white;
+    cursor: pointer;
   }
 `
