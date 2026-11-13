@@ -18,6 +18,8 @@ export const Container = styled.div`
 `
 
 export const Feed = styled.main`
+  min-width: 0;
+  width: 100%;
   border-left: 1px solid ${cores.chumbo};
   border-right: 1px solid ${cores.chumbo};
   scroll-behavior: smooth;

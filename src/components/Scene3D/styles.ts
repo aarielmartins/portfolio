@@ -3,7 +3,13 @@ import { cores, texto } from '../../styles'
 
 export const Wrapper = styled.div`
   position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   height: 240px;
+  overflow: hidden;
+  box-sizing: border-box;
+
   background-color: ${cores.chumbo};
   cursor: grab;
 
@@ -12,6 +18,10 @@ export const Wrapper = styled.div`
   }
 
   canvas {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
     touch-action: pan-y;
   }
 `
