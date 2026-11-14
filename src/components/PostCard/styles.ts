@@ -249,6 +249,7 @@ export const CommentHeader = styled.div`
 export const VideoContainer = styled.div`
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 
   video {

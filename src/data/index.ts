@@ -68,6 +68,7 @@ export const posts = [
     description:
       'Plataforma web de pedidos de restaurantes, inspirada em aplicações como o iFood. Permite visualizar restaurantes e seus respectivos pratos, adicionar e remover produtos do carrinho, controlar quantidades e calcular o valor total do pedido. Conta com formulário de checkout com validação, consumo de API REST e tela de confirmação do pedido. Desenvolvida com React e TypeScript, utilizando Redux Toolkit para gerenciamento de estado global e Styled Components para estilização.',
     image: efood,
+    video: '/videos/efood-video.mp4',
     technologies: [
       'React',
       'TypeScript',
