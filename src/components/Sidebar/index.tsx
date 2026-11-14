@@ -17,15 +17,6 @@ const Sidebar = () => {
         <S.Radar>
           <li>
             <div>
-              <h1>GAMES & EXPERIÊNCIAS</h1>
-              <h2>
-                Estudos de C# & Unity para agregar meus conhecimentos de 3D à
-                programação
-              </h2>
-            </div>
-          </li>
-          <li>
-            <div>
               <h1>FUNDAMENTOS DE PROGRAMAÇÃO</h1>
               <h2>
                 Estudos de algoritmos, estruturas de dados e system design para
